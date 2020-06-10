@@ -1,0 +1,51 @@
+chcemy zrobic restowe api do szyfrowania tekstu.
+
+payload wygladal by tak:
+@POST /encrypt
+z body:
+{
+   "text": "tekst do zaszyfrowania",
+   "algo": "nazwa algorytmu do szyfrowania"
+}
+
+z dostępną walidacją:
+- text nie moze byc pusty ani nullem
+- algo nie może być pustu anu nullem i musi być jedym z dostępnych algorytmów
+
+zatem będzie drugi endpoint ktory umowzliwa pobranie informacji o dostępnych algorytmach szyfrowania tekstu:
+
+@GET /encrypt/algos
+zwraca:
+[
+  {
+    "name": "nazwa algorytmu1",
+    "description": "opis działanaia algorytmu1"
+  },
+  {
+    "name": "nazwa algorytmu2",
+    "description": "opis działanaia algorytmu2"
+  },
+  {
+    "name": "nazwa algorytmu3",
+    "description": "opis działanaia algorytmu3"
+  }
+...
+]
+
+Algorytmy dostepne w systemie bedza implementowaly interfece TextAlgo
+z dwoma metodami String encrypt(String source) oraz String getDescription()
+
+Algorytmy powinny byc zaimplementowane jako beany springowe i dodanie nowego algorytmu powinno sprowadzac sie tylko do stworzenia nowej klasy i nie zmieniania niczego w konfiguracji.
+
+
+Przykladowe algorytmy jakei mozna zaimplementowac
+
+SWAP_N_1
+opis: przesuwa dwie sasiadujace ze soba znaki miejscami np: ALEKSADER zaaszyfruje na: LAKEASEDR
+
+ADD_1
+ops: dodaje zgodnie z tablica ascii +1 do kazdego kodu zanku: np:
+a->b, d->e itp.
+
+REVERSE
+opis: odwraca po prostu napis

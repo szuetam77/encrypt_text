@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App</title>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+<div class="container">
+
+    <h3 style="color:blue">ENCRYPT TEXT APPLICATION</h3>
+
+    <div>
+        <form class="form-inline" style="margin:20px 20px 20px 20px" id="algoForm">
+            <div class="form-group">
+                <label for="algorithm" style="margin-right:5px">Enter algo:</label>
+                <input type="text" class="form-control" id="algorithm" placeholder="Enter algorithm"/>
+            </div>
+            <div class="form-group">
+                <label for="textValue" style="margin-left:20px; margin-right:5px">Enter text:</label>
+                <input type="text" class="form-control" id="textValue" placeholder="Enter text"/>
+            </div>
+            <button type="submit" class="btn btn-default" id="postText" style="margin-left:20px; margin-right:5px">Submit</button>
+        </form>
+    </div>
+
+    <div class="col-sm-7" id="postAlgo">
+    </div>
+
+    <div class="col-sm-7" style="margin:20px 0px 20px 0px">
+        <button id="getAllAlgos" type="button" class="btn btn-primary">Get All Algorithms</button>
+        <div id="getResultDiv" style="padding:20px 10px 20px 50px">
+            <ul class="list-group">
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
